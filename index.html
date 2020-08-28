@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script>
+          alert("Welcome to CryptoLover's online IDE - CodeGround! \n\n Here you can complile your web codes and see the output real - time !! \n\n This code is under development so please be a little patient 😅😅 \n\n So stay tuned .... ");
+          alert("Almost all of the html css and js tags/functions work here except for some like iframe 😅😅\n\n If you see any bugs , Do not hesitate to report😉.")
+      </script>
+      <style>
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  background-color:#fff;
+}
+.sl{
+    width:100%;
+    height:50px;
+    position:relative ;
+    font-size:25px;
+    background-color:#ff0066;
+    font-weight:30px;
+    top:0px;
+    color:white;
+}
+.hidden {
+  display: none !important;
+}
+
+:root {
+  --Main-Navigation: #ff0066;
+  --Main-Font: #ffffff;
+  --Main-Inactive: rgba(255, 255, 255, 0.7);
+  --Main-Highlight: #88cc44;
+  --Dark-Background: #222222;
+  --Dark-Overlay: #333b40;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* Main Styles */
+.nav {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  
+  justify-content: space-around;
+}
+
+.nav button {
+  display: block;
+  background-color: var(--Main-Navigation);
+  font-weight: bold;
+  color: var(--Main-Inactive);
+  width: 100%;
+  height: 50px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.code textarea,
+#browser {
+  display: block;
+  width: calc(100% - 5px);
+  height: calc(100vh - 50px);
+  border: none;
+}
+
+.code textarea {
+  display: block;
+  padding-left: 5px;
+  background-color: var(--Dark-Background);
+  color: var(--Main-Font);
+}
+
+.container textarea {
+  display: block;
+  font-family: monospace;
+}
+
+#opsettings {
+  display: none;
+  position: absolute;
+  top: 90vh;
+  left: 7vw;
+  padding: 2px 5px;
+  background-color: orange;
+  border: 1px solid var(--Main-Font);
+  color: black;
+  border-radius:3px;
+  transform:scale(1.5);
+}
+
+.settings {
+  display: block;
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 6vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: var(--Main-Font);
+  color: #000;
+  border-radius: 10px;
+  font-family: sans-serif;
+  padding: 3px;
+  overflow-x: scroll;
+  
+}
+
+#title,
+#sub {
+  display: block;
+  text-align: center;
+}
+
+#title {
+  display: block;
+  margin-top: 5px;
+}
+
+#sub {
+  display: block;
+  font-size: 0.5em;
+  margin: 3px;
+}
+
+#description {
+  display: block;
+  font-size: 0.9em;
+  padding: 4% 5%;
+}
+
+#head,
+#close {
+  display: block;
+  margin: auto;
+  margin-top: 8%;
+}
+
+#head {
+  display: block;
+  width: 75%;
+  height: 20%;
+  padding: 3px;
+}
+
+#close {
+  display: block;
+  padding: 2% 25%;
+  position: relative;
+  top: -5px;
+  background-color: #2196c4;
+  border: none;
+  border-radius: 5px;
+  color: var(--Main-Font);
+  font-family: "Pangolin";
+  font-weight: bold;
+}
+
+/* Modified Styles */
+.CSS,
+.JS,
+.OUTPUT,
+.settings {
+  display: none;
+}
+
+.bordered {
+  display: block;
+  color: var(--Main-Font) !important;
+  border-bottom: 2px solid var(--Main-Highlight) !important;
+}
+
+/* Animation Styles */
+#opsettings:active {
+  opacity: 0.7;
+}
+
+#close:active {
+  background-color: #1a7599;
+  transform: scale(0.9);
+}
+
+.bordered {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+          
+      </style>
+    </head>
+    <body>
+        
+<div class="container">
+<div class="sl"><i class="material-icons" style="
+background:none;
+font-weight:30px;
+font-size:30px;
+position:relative;
+top:10.5px;
+">&nbsp arrow_back &nbsp</i><b style="background:none;
+top:5.5px;
+
+position:relative;
+">CodeGround</b>
+    
+    <i class="material-icons" style="
+    position:absolute;
+    top:10.5px;
+    background:none;
+    font-size:30px;
+    right:17%
+    ">share</i>
+<i class="material-icons" style="
+position:absolute;
+top:10.5px;
+background:none;
+font-size:30px;
+right:4%;
+">more_vert</i></div>
+  <div class="nav">
+    <button id="HTML-N" class="bordered">HTML</button>
+    <button id="CSS-N">CSS</button>
+    <button id="JS-N">JS</button>
+    <button id="eval">Output</button>
+  </div>
+  <div class="code">
+    <div class="HTML">
+      <textarea id="html"></textarea>
+    </div>
+    <div class="CSS">
+      <textarea id="css"></textarea>
+    </div>
+    <div class="JS">
+      <textarea id="js"></textarea>
+    </div>
+    <div class="OUTPUT">
+      <iframe id="browser">
+        &lt;iframe&gt; is not supported.
+      </iframe>
+    </div>
+  </div>
+  <button id="opsettings">?</button>
+  <div class="settings" style="border:5px solid black">
+    <h3 id="title">Mobile Code Editor</h3>
+    <p id="sub">Created By CryptoLover</p>
+    <p id="description">
+    
+    
+    <br> better.<br>
+      &lt;iframe&gt; is not supported.
+      <span id="code">Happy</span>Coding
+    </p>
+    <textarea id="head" placeholder="Write the head section of code here..."></textarea>
+    <button id="close">Close</button>
+  </div>
+</div>
+<div class="hidden">
+  <input id="scriptOp" value="&lt;script&gt;" disabled>
+  <input id="scriptEd" value="&lt;/script&gt;" disabled>
+</div>
+
+
+
+    </body>
+</html>
